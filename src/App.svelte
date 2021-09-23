@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<main>Deploy Test.</main>
+<main>Deploy Test (direct push).</main>
 
 <style>
     :root {
