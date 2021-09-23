@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<main />
+<main>Deploy Test.</main>
 
 <style>
     :root {
