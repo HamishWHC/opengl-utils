@@ -131,7 +131,7 @@
                         <label for="mode-select">Mode</label>
                     </div>
                     <div class="form-group-body">
-                        <select class="form-select" aria-label="Mode" on:change={setMode} id="mode-select">
+                        <select class="form-select" aria-label="Mode" bind:value={settings.mode} id="mode-select">
                             <option value="center">Center</option>
                             <option value="corner">Corner</option>
                             <option value="free">Free</option>
