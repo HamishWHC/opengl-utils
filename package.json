@@ -20,7 +20,10 @@
         "vite": "^2.5.4"
     },
     "dependencies": {
+        "@panzoom/panzoom": "^4.4.1",
+        "@primer/octicons": "^15.2.0",
         "firebase": "^9.0.2",
+        "svelte-routing": "^1.6.0",
         "sveltefire": "^0.1.5"
     }
 }
