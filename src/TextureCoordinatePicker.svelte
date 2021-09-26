@@ -15,7 +15,7 @@
     } = null
 
     let settings: {
-        mode: "center" | "corner"
+        mode: "center" | "corner" | "free"
         advanced: boolean
     } = JSON.parse(localStorage.getItem("settings")) || {mode: "center", advanced: false}
     $: localStorage.setItem("settings", JSON.stringify(settings))
@@ -52,9 +52,11 @@
                 pixelCoords = {x: pixelCoords.x - 0.5, y: pixelCoords.y - 0.5}
             }
 
-            pixelCoords = {
-                x: Math.round(pixelCoords.x),
-                y: Math.round(pixelCoords.y),
+            if (settings.mode !== "free") {
+                pixelCoords = {
+                    x: Math.round(pixelCoords.x),
+                    y: Math.round(pixelCoords.y),
+                }
             }
 
             if (settings.mode === "center") {
@@ -82,7 +84,7 @@
     const setMode = (event: Event & {currentTarget: EventTarget & HTMLSelectElement}) => {
         settings = {
             ...settings,
-            mode: event.currentTarget.value as "center" | "corner",
+            mode: event.currentTarget.value as "center" | "corner" | "free",
         }
     }
 </script>
@@ -132,6 +134,7 @@
                         <select class="form-select" aria-label="Mode" on:change={setMode} id="mode-select">
                             <option value="center">Center</option>
                             <option value="corner">Corner</option>
+                            <option value="free">Free</option>
                         </select>
                     </div>
                 </div>
